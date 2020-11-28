@@ -3,14 +3,13 @@
 [js-standard-style_img]: https://img.shields.io/badge/code%20style-standard-brightgreen.svg
 [js-standard-style_url]: https://standardjs.com/
 
-# Denúncia Ação ilegal contra ciclcista
+# Denúncia de ato ilegal contra ciclista
 
 Aplicação móvel para submissão de queixa de ação ilegal contra ciclista, queixa essa efetuada junto de autoridade policial, ao abrigo do n.º 5 do art.º 170.º do Código da Estrada.
 
 O código está desenhado em Javascript para ser corrido num smartphone. Para tal faz uso da plataforma <a href="https://cordova.apache.org/">Apache Cordova</a>.
 
 * A APP para Android está <a href="https://play.google.com/store/apps/details?id=com.form.parking.violation">aqui</a>.
-* A APP para iOS está <a href="https://itunes.apple.com/pt/app/aqui-n%C3%A3o/id1335652238?mt=8">aqui</a>.
 
 ## Requisitos
 
@@ -37,8 +36,8 @@ O ADB é usado para testar a APP no seu telemóvel Android
 
 ## Como instalar e testar
 
- 1. Clone este projeto `git clone https://github.com/jfoclpf/form-for-parking-violation form-for-parking-violation`
- 2. Entre na pasta recém criada `cd form-for-parking-violation`
+ 1. Clone este projeto `git clone https://github.com/jfoclpf/bike-rider bike-rider`
+ 2. Entre na pasta recém criada `cd bike-rider`
  3. Adicione a plataforma. Para Android `cordova platform add android`.
  3. Corra `cordova build --release android` para construir o projeto na sua máquina. Em Android cria o ficheiro APK na pasta `platforms/android/build/outputs/apk`
 
