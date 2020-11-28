@@ -7,56 +7,62 @@
     "files": {}
   },
   "installed_plugins": {
-    "cordova-plugin-camera": {
-      "PACKAGE_NAME": "com.form.parking.violation"
-    },
-    "cordova-plugin-device": {
-      "PACKAGE_NAME": "com.form.parking.violation"
-    },
     "cordova-plugin-email-composer": {
-      "PACKAGE_NAME": "com.form.parking.violation"
-    },
-    "cordova-plugin-file": {
-      "PACKAGE_NAME": "com.form.parking.violation"
-    },
-    "cordova-plugin-file-transfer": {
-      "PACKAGE_NAME": "com.form.parking.violation"
-    },
-    "cordova-plugin-geolocation": {
-      "PACKAGE_NAME": "com.form.parking.violation"
+      "ANDROID_SUPPORT_V4_VERSION": "27.+",
+      "PACKAGE_NAME": "bike.reporter"
     },
     "cordova-plugin-mobile-ocr": {
-      "PACKAGE_NAME": "com.form.parking.violation"
+      "PACKAGE_NAME": "bike.reporter"
     },
-    "cordova-plugin-network-information": {
-      "PACKAGE_NAME": "com.form.parking.violation"
+    "cordova-plugin-geolocation": {
+      "GPS_REQUIRED": "true",
+      "PACKAGE_NAME": "bike.reporter"
+    },
+    "info.protonet.imageresizer": {
+      "PACKAGE_NAME": "bike.reporter"
+    },
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "bike.reporter"
     },
     "cordova-plugin-screen-orientation": {
-      "PACKAGE_NAME": "com.form.parking.violation"
+      "PACKAGE_NAME": "bike.reporter"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "bike.reporter"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "bike.reporter"
+    },
+    "cordova-plugin-network-information": {
+      "PACKAGE_NAME": "bike.reporter"
+    },
+    "cordova-pdf-generator": {
+      "PACKAGE_NAME": "bike.reporter"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "bike.reporter"
+    },
+    "cordova-plugin-inappbrowser": {
+      "PACKAGE_NAME": "bike.reporter"
     },
     "cordova-plugin-simple-image-resizer": {
       "ANDROID_EXIFINTERFACES_VERSION": "27.+",
-      "PACKAGE_NAME": "com.form.parking.violation"
+      "PACKAGE_NAME": "bike.reporter"
     },
-    "cordova-plugin-statusbar": {
-      "PACKAGE_NAME": "com.form.parking.violation"
+    "cordova-plugin-file": {
+      "PACKAGE_NAME": "bike.reporter"
     },
-    "cordova-plugin-whitelist": {
-      "PACKAGE_NAME": "com.form.parking.violation"
+    "cordova-plugin-file-transfer": {
+      "PACKAGE_NAME": "bike.reporter"
     },
-    "cordova-pdf-generator": {
-      "PACKAGE_NAME": "com.form.parking.violation"
-    },
-    "cordova-plugin-splashscreen": {
-      "PACKAGE_NAME": "com.form.parking.violation"
-    },
-    "cordova-plugin-inappbrowser": {
-      "PACKAGE_NAME": "com.form.parking.violation"
+    "cordova-plugin-camera": {
+      "ANDROID_SUPPORT_V4_VERSION": "27.+",
+      "PACKAGE_NAME": "bike.reporter"
     }
   },
   "dependent_plugins": {
     "es6-promise-plugin": {
-      "PACKAGE_NAME": "com.form.parking.violation"
+      "PACKAGE_NAME": "bike.reporter"
     }
   }
 }

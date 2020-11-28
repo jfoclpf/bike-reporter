@@ -16,13 +16,13 @@
     "fetchSpec": "latest"
   },
   "_requiredBy": [
-    "#USER",
-    "/"
+    "#DEV:/",
+    "#USER"
   ],
   "_resolved": "https://registry.npmjs.org/cordova-plugin-file-transfer/-/cordova-plugin-file-transfer-1.7.1.tgz",
   "_shasum": "a75d8be2ebc3bb9b23c5b1bbd199214ec267586b",
   "_spec": "cordova-plugin-file-transfer",
-  "_where": "/home/jfolpf/form-for-parking-violation",
+  "_where": "/home/joao/bike-reporter",
   "author": {
     "name": "Apache Software Foundation"
   },

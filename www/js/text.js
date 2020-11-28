@@ -78,8 +78,7 @@ app.text = (function (thisModule) {
       $.datepicker.formatDate("dd' de 'MM' de 'yy", $('#date').datepicker('getDate')) + '</b>' +
       ($('#time').val() ? ' pelas <b>' + $('#time').val() + '</b>' : '') + // optional
       ', ' + 'na <b>' + $('#street').val() + ', ' + $('#locality').val() + '</b>, ' +
-      ($('#street_number').val() ? 'aproximadamente junto à porta com o <b>número ' +
-      $('#street_number').val() + '</b>, ' : '') + // optional
+      ($('#street_number').val() ? 'aproximadamente junto à porta com o <b>número ' + $('#street_number').val() + '</b>, ' : '') + // optional
       'a viatura com matrícula <b>' + carPlateStr + '</b> ' + carmake_model_txt +
       penaltyDescription +
       ', em violação ' + penaltyLawArticle + '.'

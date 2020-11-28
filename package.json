@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/jfoclpf/form-for-parking-violation.git"
+    "url": "git://github.com/jfoclpf/bike-reporter.git"
   },
   "author": "Apache Cordova Team",
   "license": "GPL-3.0",
@@ -21,25 +21,12 @@
     "bootstrap": "^4.5.3",
     "cordova": "9.0.0",
     "cordova-browser": "6.0.0",
-    "cordova-pdf-generator": "^2.1.1",
     "cordova-plugin-cache-clear": "1.3.8",
-    "cordova-plugin-camera": "4.1.0",
-    "cordova-plugin-compat": "1.2.0",
-    "cordova-plugin-device": "2.0.3",
-    "cordova-plugin-email-composer": "^0.9.2",
-    "cordova-plugin-file": "6.0.2",
-    "cordova-plugin-file-transfer": "1.7.1",
-    "cordova-plugin-geolocation": "^4.1.0",
     "cordova-plugin-image-resizer": "git+https://github.com/protonet/cordova-plugin-image-resizer.git",
-    "cordova-plugin-mobile-ocr": "3.1.1",
-    "cordova-plugin-network-information": "2.0.2",
-    "cordova-plugin-screen-orientation": "3.0.2",
-    "cordova-plugin-simple-image-resizer": "git+https://github.com/protonet/cordova-plugin-image-resizer.git",
+    "cordova-plugin-mobile-ocr": "3.1.2",
     "cordova-plugin-statusbar": "2.4.3",
-    "cordova-plugin-whitelist": "1.3.4",
     "cors": "^2.8.5",
     "debug": "4.1.1",
-    "es6-promise-plugin": "4.2.2",
     "exif-js": "^2.3.0",
     "express": "^4.17.1",
     "express-fileupload": "^1.2.0",
@@ -57,12 +44,7 @@
       "cordova-plugin-geolocation": {},
       "cordova-plugin-email-composer": {},
       "info.protonet.imageresizer": {},
-      "cordova-plugin-simple-image-resizer": {
-        "ANDROID_EXIFINTERFACES_VERSION": "27.+"
-      },
       "cordova-plugin-camera": {},
-      "cordova-plugin-file-transfer": {},
-      "cordova-plugin-file": {},
       "cordova-plugin-statusbar": {},
       "cordova-plugin-screen-orientation": {},
       "cordova-plugin-device": {},
@@ -72,7 +54,12 @@
       "cordova-plugin-compat": {},
       "cordova-pdf-generator": {},
       "cordova-plugin-splashscreen": {},
-      "cordova-plugin-inappbrowser": {}
+      "cordova-plugin-inappbrowser": {},
+      "cordova-plugin-simple-image-resizer": {
+        "ANDROID_EXIFINTERFACES_VERSION": "27.+"
+      },
+      "cordova-plugin-file": {},
+      "cordova-plugin-file-transfer": {}
     },
     "platforms": [
       "browser",
@@ -81,7 +68,8 @@
   },
   "devDependencies": {
     "cordova-android": "^9.0.0",
-    "cordova-plugin-splashscreen": "^6.0.0",
+    "cordova-plugin-file-transfer": "^1.7.1",
+    "cordova-plugin-simple-image-resizer": "^0.2.0",
     "cordova-set-version": "^10.0.0",
     "html-minifier": "^4.0.0",
     "npm-check-updates": "^7.1.1",

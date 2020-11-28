@@ -7,45 +7,33 @@
     "is_top_level": true,
     "variables": {}
   },
-  "cordova-plugin-geolocation": {
-    "source": {
-      "type": "registry",
-      "id": "cordova-plugin-geolocation@^2.4.3"
-    },
-    "is_top_level": true,
-    "variables": {}
-  },
   "cordova-plugin-email-composer": {
     "source": {
       "type": "registry",
-      "id": "cordova-plugin-email-composer@^0.8.15"
+      "id": "cordova-plugin-email-composer"
+    },
+    "is_top_level": true,
+    "variables": {
+      "ANDROID_SUPPORT_V4_VERSION": "27.+"
+    }
+  },
+  "cordova-plugin-mobile-ocr": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-mobile-ocr@3.1.2"
     },
     "is_top_level": true,
     "variables": {}
   },
-  "cordova-plugin-simple-image-resizer": {
+  "cordova-plugin-geolocation": {
     "source": {
       "type": "registry",
-      "id": "https://github.com/protonet/cordova-plugin-image-resizer.git"
+      "id": "cordova-plugin-geolocation@4.1.0"
     },
     "is_top_level": true,
-    "variables": {}
-  },
-  "es6-promise-plugin": {
-    "source": {
-      "type": "registry",
-      "id": "es6-promise-plugin@^4.1.0"
-    },
-    "is_top_level": false,
-    "variables": {}
-  },
-  "cordova-plugin-camera": {
-    "source": {
-      "type": "registry",
-      "id": "cordova-plugin-camera@4.0.3"
-    },
-    "is_top_level": true,
-    "variables": {}
+    "variables": {
+      "GPS_REQUIRED": "true"
+    }
   },
   "info.protonet.imageresizer": {
     "source": {
@@ -55,26 +43,10 @@
     "is_top_level": true,
     "variables": {}
   },
-  "cordova-plugin-file-transfer": {
-    "source": {
-      "type": "registry",
-      "id": "cordova-plugin-file-transfer@1.7.1"
-    },
-    "is_top_level": true,
-    "variables": {}
-  },
-  "cordova-plugin-file": {
-    "source": {
-      "type": "registry",
-      "id": "cordova-plugin-file@6.0.1"
-    },
-    "is_top_level": true,
-    "variables": {}
-  },
   "cordova-plugin-statusbar": {
     "source": {
       "type": "registry",
-      "id": "cordova-plugin-statusbar@^2.2.3"
+      "id": "cordova-plugin-statusbar@2.4.3"
     },
     "is_top_level": true,
     "variables": {}
@@ -87,10 +59,18 @@
     "is_top_level": true,
     "variables": {}
   },
+  "es6-promise-plugin": {
+    "source": {
+      "type": "registry",
+      "id": "es6-promise-plugin@^4.1.0"
+    },
+    "is_top_level": false,
+    "variables": {}
+  },
   "cordova-plugin-device": {
     "source": {
       "type": "registry",
-      "id": "cordova-plugin-device@2.0.3"
+      "id": "cordova-plugin-device"
     },
     "is_top_level": true,
     "variables": {}
@@ -106,15 +86,7 @@
   "cordova-plugin-network-information": {
     "source": {
       "type": "registry",
-      "id": "cordova-plugin-network-information@^2.0.1"
-    },
-    "is_top_level": true,
-    "variables": {}
-  },
-  "cordova-plugin-mobile-ocr": {
-    "source": {
-      "type": "registry",
-      "id": "cordova-plugin-mobile-ocr"
+      "id": "cordova-plugin-network-information"
     },
     "is_top_level": true,
     "variables": {}
@@ -122,7 +94,7 @@
   "cordova-pdf-generator": {
     "source": {
       "type": "registry",
-      "id": "cordova-pdf-generator@^2.1.1"
+      "id": "cordova-pdf-generator"
     },
     "is_top_level": true,
     "variables": {}
@@ -138,7 +110,39 @@
   "cordova-plugin-inappbrowser": {
     "source": {
       "type": "registry",
-      "id": "cordova-plugin-inappbrowser@4.0.0"
+      "id": "cordova-plugin-inappbrowser@4.1.0"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-simple-image-resizer": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-simple-image-resizer"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-file": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-file@6.0.2"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-file-transfer": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-file-transfer"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-camera": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-camera@5.0.1"
     },
     "is_top_level": true,
     "variables": {}

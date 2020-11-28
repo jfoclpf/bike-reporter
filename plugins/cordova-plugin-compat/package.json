@@ -1,28 +1,27 @@
 {
-  "_from": "cordova-plugin-compat@^1.0.0",
+  "_from": "cordova-plugin-compat@1.2.0",
   "_id": "cordova-plugin-compat@1.2.0",
   "_inBundle": false,
   "_integrity": "sha1-C8ZXVyduvZIMASzpIOJ0F3V2Nz4=",
   "_location": "/cordova-plugin-compat",
   "_phantomChildren": {},
   "_requested": {
-    "type": "range",
+    "type": "version",
     "registry": true,
-    "raw": "cordova-plugin-compat@^1.0.0",
+    "raw": "cordova-plugin-compat@1.2.0",
     "name": "cordova-plugin-compat",
     "escapedName": "cordova-plugin-compat",
-    "rawSpec": "^1.0.0",
+    "rawSpec": "1.2.0",
     "saveSpec": null,
-    "fetchSpec": "^1.0.0"
+    "fetchSpec": "1.2.0"
   },
   "_requiredBy": [
-    "#USER",
-    "/"
+    "#USER"
   ],
   "_resolved": "https://registry.npmjs.org/cordova-plugin-compat/-/cordova-plugin-compat-1.2.0.tgz",
   "_shasum": "0bc65757276ebd920c012ce920e274177576373e",
-  "_spec": "cordova-plugin-compat@^1.0.0",
-  "_where": "/home/jfolpf/form-for-parking-violation",
+  "_spec": "cordova-plugin-compat@1.2.0",
+  "_where": "/home/joao/bike-reporter",
   "author": {
     "name": "Apache Software Foundation"
   },

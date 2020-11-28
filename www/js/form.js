@@ -311,14 +311,6 @@ app.form = (function (thisModule) {
     }
   })
 
-  $('#street_number').on('input', function () {
-    if ($(this).val() === '' && !DEBUG) {
-      $(this).css('border-color', 'red')
-    } else {
-      $(this).css('border-color', '')
-    }
-  })
-
   var storedRequestedCarInfo // to avoid doing many successive requests for the same plate
   var requestGoingOn = false // to avoid parallel requests
 

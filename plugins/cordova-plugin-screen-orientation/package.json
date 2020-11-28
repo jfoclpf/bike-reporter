@@ -16,13 +16,12 @@
     "fetchSpec": "latest"
   },
   "_requiredBy": [
-    "#USER",
-    "/"
+    "#USER"
   ],
   "_resolved": "https://registry.npmjs.org/cordova-plugin-screen-orientation/-/cordova-plugin-screen-orientation-3.0.2.tgz",
   "_shasum": "81290a933cfe84d35482cfcb251c931cc7b71931",
   "_spec": "cordova-plugin-screen-orientation",
-  "_where": "/home/jfolpf/form-for-parking-violation/node_modules",
+  "_where": "/home/joao/bike-reporter",
   "author": {
     "name": "Apache Software Foundation"
   },

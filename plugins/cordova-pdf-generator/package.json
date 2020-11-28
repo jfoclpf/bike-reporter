@@ -1,38 +1,34 @@
 {
-  "_args": [
-    [
-      "cordova-pdf-generator@2.1.1",
-      "/home/joao/form-for-parking-violation"
-    ]
-  ],
-  "_from": "cordova-pdf-generator@2.1.1",
+  "_from": "cordova-pdf-generator",
   "_id": "cordova-pdf-generator@2.1.1",
   "_inBundle": false,
   "_integrity": "sha512-UcA7v1APiAEIwRzOHMXF25WHnNIQtGcHLWcnRYTl3+nz6C2cCmin2b9lbtxgfS2IyTwzow0mszHIM5N4WckyZA==",
   "_location": "/cordova-pdf-generator",
   "_phantomChildren": {},
   "_requested": {
-    "type": "version",
+    "type": "tag",
     "registry": true,
-    "raw": "cordova-pdf-generator@2.1.1",
+    "raw": "cordova-pdf-generator",
     "name": "cordova-pdf-generator",
     "escapedName": "cordova-pdf-generator",
-    "rawSpec": "2.1.1",
+    "rawSpec": "",
     "saveSpec": null,
-    "fetchSpec": "2.1.1"
+    "fetchSpec": "latest"
   },
   "_requiredBy": [
-    "/"
+    "#USER"
   ],
   "_resolved": "https://registry.npmjs.org/cordova-pdf-generator/-/cordova-pdf-generator-2.1.1.tgz",
-  "_spec": "2.1.1",
-  "_where": "/home/joao/form-for-parking-violation",
+  "_shasum": "3e201157a4349e5b1872ad1865f5cb33f63de8f8",
+  "_spec": "cordova-pdf-generator",
+  "_where": "/home/joao/bike-reporter",
   "author": {
     "name": "cesar"
   },
   "bugs": {
     "url": "https://github.com/cesarvr/pdf-generator/issues"
   },
+  "bundleDependencies": false,
   "cordova": {
     "id": "cordova-pdf-generator",
     "platforms": [
@@ -40,6 +36,7 @@
       "android"
     ]
   },
+  "deprecated": false,
   "description": "is a HTML to PDF (offline) Generator.",
   "engines": [
     {

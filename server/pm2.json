@@ -1,6 +1,6 @@
 {
   "apps" : [{
-    "name"        : "form-for-parking-violation",
+    "name"        : "bike-reporter",
     "script"      : "serverForDB.js",
     "watch"       : false,
     "instances"   : "2",

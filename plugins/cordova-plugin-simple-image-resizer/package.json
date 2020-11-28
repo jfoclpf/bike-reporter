@@ -1,25 +1,28 @@
 {
-  "_from": "git+https://github.com/protonet/cordova-plugin-image-resizer.git",
+  "_from": "cordova-plugin-simple-image-resizer",
   "_id": "cordova-plugin-simple-image-resizer@0.2.0",
   "_inBundle": false,
-  "_integrity": "",
+  "_integrity": "sha1-xAXiUvzeqf62xoiz8wHo0Bd/YOQ=",
   "_location": "/cordova-plugin-simple-image-resizer",
   "_phantomChildren": {},
   "_requested": {
-    "type": "git",
-    "raw": "https://github.com/protonet/cordova-plugin-image-resizer.git",
-    "rawSpec": "https://github.com/protonet/cordova-plugin-image-resizer.git",
-    "saveSpec": "git+https://github.com/protonet/cordova-plugin-image-resizer.git",
-    "fetchSpec": "https://github.com/protonet/cordova-plugin-image-resizer.git",
-    "gitCommittish": null
+    "type": "tag",
+    "registry": true,
+    "raw": "cordova-plugin-simple-image-resizer",
+    "name": "cordova-plugin-simple-image-resizer",
+    "escapedName": "cordova-plugin-simple-image-resizer",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
   },
   "_requiredBy": [
-    "#USER",
-    "/"
+    "#DEV:/",
+    "#USER"
   ],
-  "_resolved": "git+https://github.com/protonet/cordova-plugin-image-resizer.git#89dfa8f0c97ba022b6598d80ce54f15178df1d2f",
-  "_spec": "https://github.com/protonet/cordova-plugin-image-resizer.git",
-  "_where": "/home/jfolpf/form-for-parking-violation",
+  "_resolved": "https://registry.npmjs.org/cordova-plugin-simple-image-resizer/-/cordova-plugin-simple-image-resizer-0.2.0.tgz",
+  "_shasum": "c405e252fcdea9feb6c688b3f301e8d0177f60e4",
+  "_spec": "cordova-plugin-simple-image-resizer",
+  "_where": "/home/joao/bike-reporter",
   "author": "",
   "bugs": {
     "url": "https://github.com/JoschkaSchulz/cordova-plugin-image-resizer/issues"
