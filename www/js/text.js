@@ -81,7 +81,7 @@ app.text = (function (thisModule) {
       ($('#street_number').val() ? 'aproximadamente junto à porta com o <b>número ' +
       $('#street_number').val() + '</b>, ' : '') + // optional
       'a viatura com matrícula <b>' + carPlateStr + '</b> ' + carmake_model_txt +
-      'encontrava-se estacionada' + ' ' + penaltyDescription +
+      penaltyDescription +
       ', em violação ' + penaltyLawArticle + '.'
 
     var msg3 = 'Pode-se comprovar esta situação através' +
