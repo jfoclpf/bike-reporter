@@ -18,11 +18,11 @@ cd platforms/android/app/build/outputs/apk/release/
 
 jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore autocosts.keystore -storepass $PASS app-release-unsigned.apk autocosts
 
-zipalign -v 4 app-release-unsigned.apk formParkingViolation.apk
+zipalign -v 4 app-release-unsigned.apk bikeReporter.apk
 
 cd ../../../../../../..
-rm formParkingViolation.apk
+rm bikeReporter.apk
 
-cp platforms/android/app/build/outputs/apk/release/formParkingViolation.apk .  
+cp platforms/android/app/build/outputs/apk/release/bikeReporter.apk .  
 
 

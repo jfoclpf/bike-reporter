@@ -31,7 +31,7 @@ plugins/**/tests/
 **/all.min.js
 
 # where the build script stores the apk
-formParkingViolation.*
+bikeReporter.*
 
 # keys and credentials
 www/js/credentials.js

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <widget id="bike.reporter" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-  <name>Denúncia de ato ilegal contra ciclista</name>
+  <name>Bike Reporter</name>
   <description>
     Aplicação para submissão de queixa de ação ilegal contra ciclista, queixa essa efetuada junto de autoridade policial ao abrigo do n.º 5 do art.º 170.º do Código da Estrada
   </description>
