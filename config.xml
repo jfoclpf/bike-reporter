@@ -8,7 +8,7 @@
     Ciclista urbano
   </author>
   <content src="index.html"/>
-  <icon height="512" src="res/icon/universal/500.png" width="512"/>
+  <icon height="512" src="res/icon/universal/512.png" width="512"/>
   <icon density="xhdpi" height="196" src="res/icon/universal/500.png" width="196"/>
   <icon density="xxxhdpi" height="192" src="res/icon/universal/500.png" width="192"/>
   <icon density="xxhdpi" height="144" src="res/icon/universal/500.png" width="144"/>
