@@ -13,14 +13,14 @@ O código está desenhado em Javascript para ser corrido num smartphone. Para ta
 
 ## Requisitos
 
-### [Apache Cordova](https://cordova.apache.org/)
-
-Este projeto faz uso de <a href="https://cordova.apache.org/">Apache Cordova</a> para converter código HTML5 e Javascript para uma aplicação de dispositivo móvel, como Android ou iOS. Precisa, portanto, de ter Apache Cordova instalado na sua máquina.
-
 ### [Node JS](https://nodejs.org/en/download/)
 
 O projeto necessita de alguns pacotes `npm`, sendo que o `npm` vem instalado com o `nodejs`.
 Alguns scripts do projeto também fazem uso do `nodejs`.
+
+### [Apache Cordova](https://cordova.apache.org/)
+
+Este projeto faz uso de <a href="https://cordova.apache.org/">Apache Cordova</a> para converter código HTML5 e Javascript para uma aplicação de dispositivo móvel, como Android ou iOS. Precisa, portanto, de ter Apache Cordova instalado na sua máquina. Após instalar o node, você poderá instalá-lo com `npm i -g cordova`.
 
 ### [gradle](https://docs.gradle.org/current/userguide/what_is_gradle.html)
 
