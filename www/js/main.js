@@ -1,6 +1,7 @@
 /* eslint camelcase: off */
 
 /* global $, cordova */
+/* eslint no-var: "off" */
 
 var DEBUG = false
 

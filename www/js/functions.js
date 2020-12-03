@@ -1,6 +1,7 @@
 /* eslint camelcase: off */
 
 /* global app, $, device, FileUploadOptions, FileTransfer, DEBUG */
+/* eslint no-var: "off" */
 
 app.functions = (function (thisModule) {
   // detects if the car plate is correctly filled in
@@ -14,7 +15,7 @@ app.functions = (function (thisModule) {
     var plateString = arrayPlate.join('-')
     // four valid plate types: AA-00-00, 00-00-AA, 00-AA-00, AA-00-AA
     // see: https://pt.stackoverflow.com/a/431398/101186
-    var expr = RegExp(/(([A-Z]{2}-[0-9]{2}-[0-9]{2})|([0-9]{2}-[0-9]{2}-[A-Z]{2})|([0-9]{2}-[A-Z]{2}-[0-9]{2})|([A-Z]{2}-[0-9]{2}-[A-Z]{2}))$/)
+    var expr = /(([A-Z]{2}-[0-9]{2}-[0-9]{2})|([0-9]{2}-[0-9]{2}-[A-Z]{2})|([0-9]{2}-[A-Z]{2}-[0-9]{2})|([A-Z]{2}-[0-9]{2}-[A-Z]{2}))$/
 
     return expr.test(plateString)
   }

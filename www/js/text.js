@@ -1,6 +1,7 @@
 /* eslint camelcase: off */
 
 /* global app, $, DEBUG */
+/* eslint no-var: "off" */
 
 app.text = (function (thisModule) {
   // main message

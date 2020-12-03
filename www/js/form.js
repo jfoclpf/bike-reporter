@@ -1,6 +1,7 @@
 /* eslint camelcase: off */
 
 /* global app, $, CAR_LIST, DEBUG, CARROS_MATRICULAS_API */
+/* eslint no-var: "off" */
 
 app.form = (function (thisModule) {
   // date field

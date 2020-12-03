@@ -5,6 +5,7 @@
 
 /* eslint camelcase: off */
 /* global app, $, device */
+/* eslint no-var: "off" */
 
 app.historic = (function (thisModule) {
   const requestHistoricUrl = 'https://contabo.joaopimentel.com/passeio_livre/serverapp_get_historic'

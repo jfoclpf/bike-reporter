@@ -1,6 +1,7 @@
 /* eslint camelcase: off */
 
 /* global app, cordova, $ */
+/* eslint no-var: "off" */
 
 app.sidebar = (function (thisModule) {
   function init () {

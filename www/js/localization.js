@@ -2,6 +2,7 @@
 
 /* global app, $, google, Connection, GOOGLE_MAPS_API_KEYS */
 
+/* eslint no-var: "off" */
 /* eslint-disable no-unused-vars */
 /* this function is global because of gmaps api */
 function onGoogleMapsApiLoaded () {

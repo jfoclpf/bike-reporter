@@ -1,7 +1,8 @@
 /* eslint camelcase: off */
 
-/* eslint no-unused-vars: "off" */
 /* global app, $, cordova, alert, pdf, Blob, atob, FileTransfer, AUTHENTICATION_WITH_IN_APP_BROWSER */
+/* eslint no-unused-vars: "off" */
+/* eslint no-var: "off" */
 
 app.authentication = (function (thisModule) {
   var inAppBrowserRef

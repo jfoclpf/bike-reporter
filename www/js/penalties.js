@@ -1,5 +1,5 @@
 /* eslint camelcase: off */
-
+/* eslint no-var: "off" */
 /* global app, $ */
 
 app.penalties = (function (thisModule) {

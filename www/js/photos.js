@@ -1,6 +1,7 @@
 /* eslint camelcase: off */
 
 /* global app, $, Camera, textocr */
+/* eslint no-var: "off" */
 
 app.photos = (function (thisModule) {
   // get Photo function
@@ -150,7 +151,7 @@ app.photos = (function (thisModule) {
         // between AA and 00 can be space \s or any type of hyphen (-) en dash (–) and em dash (—)
         // see: https://pt.stackoverflow.com/a/431398/101186
         // see: https://regex101.com/r/SuYjr4/3
-        var detectPlate = RegExp(/^\s{0,}.{0,1}(([A-Z]{2}[\s-–—]{0,1}[0-9]{2}[\s-–—]{0,1}[0-9]{2})|([0-9]{2}[\s-–—]{0,1}[0-9]{2}[\s-–—]{0,1}[A-Z]{2})|([0-9]{2}[\s\-–—]{0,1}[A-Z]{2}[\s\-–—]{0,1}[0-9]{2})|([A-Z]{2}[\s-–—]{0,1}[0-9]{2}[\s-–—]{0,1}[A-Z]{2})).{0,1}\s{0,}$/)
+        var detectPlate = /^\s{0,}.{0,1}(([A-Z]{2}[\s-–—]{0,1}[0-9]{2}[\s-–—]{0,1}[0-9]{2})|([0-9]{2}[\s-–—]{0,1}[0-9]{2}[\s-–—]{0,1}[A-Z]{2})|([0-9]{2}[\s\-–—]{0,1}[A-Z]{2}[\s\-–—]{0,1}[0-9]{2})|([A-Z]{2}[\s-–—]{0,1}[0-9]{2}[\s-–—]{0,1}[A-Z]{2})).{0,1}\s{0,}$/
 
         var pattern, plateArray
         for (var i = 0; i < linesArray.length; i++) {
