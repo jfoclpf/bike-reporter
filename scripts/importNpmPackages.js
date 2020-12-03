@@ -1,6 +1,7 @@
 const fse = require('fs-extra')
 const path = require('path')
 
+/* eslint no-var: "off" */
 var projectRoot
 
 module.exports = function (context) {

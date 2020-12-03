@@ -4,6 +4,8 @@
   the server to the client. It also concatenates somes files, for better bandwith performance
 */
 
+/* eslint no-var: "off" */
+
 // node/npm includes
 const fs = require('fs')
 const path = require('path')
