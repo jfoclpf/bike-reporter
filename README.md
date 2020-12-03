@@ -36,8 +36,8 @@ O ADB é usado para testar a APP no seu telemóvel Android
 
 ## Como instalar e testar
 
- 1. Clone este projeto `git clone https://github.com/jfoclpf/bike-rider bike-rider`
- 2. Entre na pasta recém criada `cd bike-rider`
+ 1. Clone este projeto `git clone https://github.com/jfoclpf/bike-reporter bike-reporter`
+ 2. Entre na pasta recém criada `cd bike-reporter`
  3. Adicione a plataforma. Para Android `cordova platform add android`.
  3. Corra `cordova build --release android` para construir o projeto na sua máquina. Em Android cria o ficheiro APK na pasta `platforms/android/build/outputs/apk`
 
