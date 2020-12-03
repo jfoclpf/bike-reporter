@@ -4,10 +4,10 @@ const path = require('path')
 module.exports = function (context) {
   console.log(context.hook + ': copying credentials')
 
-  var projectRoot = path.resolve(path.dirname(context.scriptLocation), '..')
+  const projectRoot = path.resolve(path.dirname(context.scriptLocation), '..')
 
-  var fileOriginFullPath = path.join(projectRoot, 'keys', 'credentials.js')
-  var fileDestFullPath = path.join(projectRoot, 'www', 'js', 'credentials.js')
+  const fileOriginFullPath = path.join(projectRoot, 'keys', 'credentials.js')
+  const fileDestFullPath = path.join(projectRoot, 'www', 'js', 'credentials.js')
 
   fse.copySync(fileOriginFullPath, fileDestFullPath)
 
