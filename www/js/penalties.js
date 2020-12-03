@@ -11,6 +11,11 @@ app.penalties = (function (thisModule) {
       select: 'Ultrapassagem a menos de 1,5 metros',
       description: 'efetuou uma ultrapassagem sem guardar a distância lateral mínima de 1,5 m',
       law_article: 'da alínea e) do n.º 2 do art.º 38.º do Código da Estrada'
+    },
+    ocupacao_via_adjacente: {
+      select: 'Ultrapassagem sem ocupar a via adjacente',
+      description: 'efetuou uma ultrapassagem sem ocupar a via adjacente',
+      law_article: 'do n.º 3 do art.º 38.º com referência à alínea u) do art.º 1 do Código da Estrada'
     }
   }
 
