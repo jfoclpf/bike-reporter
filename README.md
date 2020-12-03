@@ -13,14 +13,14 @@ O código está desenhado em Javascript para ser corrido num smartphone. Para ta
 
 ## Requisitos
 
-### [Apache Cordova](https://cordova.apache.org/)
-
-Este projeto faz uso de <a href="https://cordova.apache.org/">Apache Cordova</a> para converter código HTML5 e Javascript para uma aplicação de dispositivo móvel, como Android ou iOS. Precisa, portanto, de ter Apache Cordova instalado na sua máquina.
-
 ### [Node JS](https://nodejs.org/en/download/)
 
 O projeto necessita de alguns pacotes `npm`, sendo que o `npm` vem instalado com o `nodejs`.
 Alguns scripts do projeto também fazem uso do `nodejs`.
+
+### [Apache Cordova](https://cordova.apache.org/)
+
+Este projeto faz uso de <a href="https://cordova.apache.org/">Apache Cordova</a> para converter código HTML5 e Javascript para uma aplicação de dispositivo móvel, como Android ou iOS. Precisa, portanto, de ter Apache Cordova instalado na sua máquina. Após instalar o node, você poderá instalá-lo com `npm i -g cordova`.
 
 ### [gradle](https://docs.gradle.org/current/userguide/what_is_gradle.html)
 
@@ -36,8 +36,8 @@ O ADB é usado para testar a APP no seu telemóvel Android
 
 ## Como instalar e testar
 
- 1. Clone este projeto `git clone https://github.com/jfoclpf/bike-rider bike-rider`
- 2. Entre na pasta recém criada `cd bike-rider`
+ 1. Clone este projeto `git clone https://github.com/jfoclpf/bike-reporter bike-reporter`
+ 2. Entre na pasta recém criada `cd bike-reporter`
  3. Adicione a plataforma. Para Android `cordova platform add android`.
  3. Corra `cordova build --release android` para construir o projeto na sua máquina. Em Android cria o ficheiro APK na pasta `platforms/android/build/outputs/apk`
 
@@ -75,8 +75,8 @@ mesmo apagar com `export JAVA_HOME=`
 ## Contribuições são muito bem-vindas
 
  * respeite a estrutura dos ficheiros
- * comente sempre o código (preferencialmente em Inglês), tal ajuda os outros a compreender as suas contribuiçes
- * para identações, use sempre 4 espaços (não use 2 espaços, nem tabulaçes, ou seja TAB)
+ * comente sempre o código (preferencialmente em Inglês), tal ajuda os outros a compreender as suas contribuições
+ * para identações, use sempre 4 espaços (não use 2 espaços, nem tabulações, ou seja TAB)
 
 ## Licença
 
