@@ -18,7 +18,7 @@ app.penalties = (function (thisModule) {
       law_article: 'do n.º 3 do art.º 38.º com referência à alínea u) do art.º 1 do Código da Estrada'
     },
     ciclovia: {
-      select: 'Sobre ciclovia',
+      select: 'Estacionamento automóvel sobre ciclovia',
       description: 'encontrava-se sobre uma pista para velocípedes',
       law_article: 'da alínea f) do n.º 1 do art.º 49.º do Código da Estrada'
     }
