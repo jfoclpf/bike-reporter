@@ -442,8 +442,8 @@ app.functions = (function (thisModule) {
   }
 
   function submitDataToDB () {
-    const uploadImagesUrl = 'https://contabo.joaopimentel.com/passeio_livre/serverapp_img_upload'
-    const uploadRequesUrl = 'https://contabo.joaopimentel.com/passeio_livre/serverapp'
+    const uploadImagesUrl = 'https://contabo.joaopimentel.com/app_bike_reporter/serverapp_img_upload'
+    const uploadRequesUrl = 'https://contabo.joaopimentel.com/app_bike_reporter/serverapp'
 
     // generates file names array for images
     const randomString = getRandomString(10) // serves to uniquely identify the filenames

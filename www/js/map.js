@@ -8,8 +8,8 @@
 /* global app, $, google, DEBUG */
 
 app.map = (function (thisModule) {
-  const requestHistoricUrl = 'https://contabo.joaopimentel.com/passeio_livre/serverapp_get_historic'
-  const requestImageUrl = 'https://contabo.joaopimentel.com/passeio_livre/image_server/'
+  const requestHistoricUrl = 'https://contabo.joaopimentel.com/app_bike_reporter/serverapp_get_historic'
+  const requestImageUrl = 'https://contabo.joaopimentel.com/app_bike_reporter/image_server/'
   var isGoogleMapsApiLoaded = false
 
   var allDbEntries

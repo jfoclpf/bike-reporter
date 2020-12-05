@@ -4,11 +4,11 @@ and stores it in the dabatase */
 /* eslint prefer-const: "off" */
 /* eslint no-var: "off" */
 
-const submissionsUrl = '/passeio_livre/serverapp'
-const requestHistoricUrl = '/passeio_livre/serverapp_get_historic'
-const commonPort = 3035
-const imgUploadUrl = '/passeio_livre/serverapp_img_upload'
-const imgUploadUrlPort = 3036
+const submissionsUrl = '/app_bike_reporter/serverapp'
+const requestHistoricUrl = '/app_bike_reporter/serverapp_get_historic'
+const commonPort = 4035
+const imgUploadUrl = '/app_bike_reporter/serverapp_img_upload'
+const imgUploadUrlPort = 4036
 
 const fs = require('fs')
 const path = require('path')
