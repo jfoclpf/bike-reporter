@@ -368,7 +368,7 @@ app.authentication = (function (thisModule) {
     const address = app.functions.getFullAddress()
     var emailSubject = `[${carPlateStr}] na ${address} - Denúncia de estacionamento ao abrigo do n.º 5 do art. 170.º do Código da Estrada`
 
-    app.functions.submitDataToDB()
+    // app.functions.submitDataToDB()
 
     cordova.plugins.email.open({
       to: app.main.emailTo, // email addresses for TO field

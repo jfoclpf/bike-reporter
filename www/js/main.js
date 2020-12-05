@@ -250,7 +250,7 @@ app.main = (function (thisModule) {
 
     console.log(JSON.stringify(thisModule.imagesUriCleanArray, 0, 3))
 
-    app.functions.submitDataToDB()
+    // app.functions.submitDataToDB()
 
     app.functions.updateDateAndTime()
 
