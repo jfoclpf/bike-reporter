@@ -16,6 +16,11 @@ app.penalties = (function (thisModule) {
       select: 'Ultrapassagem sem ocupar a via adjacente',
       description: 'efetuou uma ultrapassagem sem ocupar a via adjacente',
       law_article: 'do n.º 3 do art.º 38.º com referência à alínea u) do art.º 1 do Código da Estrada'
+    },
+    ciclovia: {
+      select: 'Sobre ciclovia',
+      description: 'encontrava-se sobre uma pista para velocípedes',
+      law_article: 'da alínea f) do n.º 1 do art.º 49.º do Código da Estrada'
     }
   }
 
