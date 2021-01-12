@@ -3,9 +3,11 @@ node_modules/
 temp/
 build/
 bin/
+test/www/*
 
-# Cordova - platforms
+# Cordova - platforms and plugins
 platforms/
+plugins/
 
 # Cordova - plugins - remove all except json & xml
 plugins/**/.DS_Store
@@ -26,12 +28,8 @@ plugins/**/tests/
 # res
 **/resources/signing
 
-# project specific
-**/dist/
-**/all.min.js
-
 # where the build script stores the apk
-bikeReporter.*
+dist/formParkingViolation.*
 
 # keys and credentials
 www/js/credentials.js
