@@ -1,10 +1,10 @@
 /* eslint camelcase: off */
-/* eslint no-var: "off" */
+
 /* global app, $ */
 
 app.penalties = (function (thisModule) {
   // campos "description" e "law_article" devem ser condicentes gramaticalmente com a mensagem que será gerada
-  // exemplo: "a viatura" + description + ", em violação" + law_article
+  // exemplo: "a viatura encontrava-se estacionada" + description + ", em violação" + law_article
 
   var penalties = {
     ultrapassagem_dando_menos_de_1_5m: {
@@ -55,11 +55,29 @@ app.penalties = (function (thisModule) {
     }
   }
 
+  function getDescription (code) {
+    for (const key in penalties) {
+      if (key === code) {
+        return penalties[key].description
+      }
+    }
+  }
+
+  function getLawArticle (code) {
+    for (const key in penalties) {
+      if (key === code) {
+        return penalties[key].law_article
+      }
+    }
+  }
+
   /* === Public methods to be returned === */
   thisModule.getPenalties = getPenalties
   thisModule.populatesPenalties = populatesPenalties
   thisModule.getSelectedPenaltyCode = getSelectedPenaltyCode
   thisModule.getShortDescription = getShortDescription
+  thisModule.getDescription = getDescription
+  thisModule.getLawArticle = getLawArticle
 
   return thisModule
 })(app.penalties || {})

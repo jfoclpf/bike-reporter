@@ -1,34 +1,38 @@
 {
-  "_from": "cordova-plugin-screen-orientation",
+  "_args": [
+    [
+      "cordova-plugin-screen-orientation@3.0.2",
+      "/home/joao/form-for-parking-violation"
+    ]
+  ],
+  "_from": "cordova-plugin-screen-orientation@3.0.2",
   "_id": "cordova-plugin-screen-orientation@3.0.2",
   "_inBundle": false,
   "_integrity": "sha512-2w6CMC+HGvbhogJetalwGurL2Fx8DQCCPy3wlSZHN1/W7WoQ5n9ujVozcoKrY4VaagK6bxrPFih+ElkO8Uqfzg==",
   "_location": "/cordova-plugin-screen-orientation",
   "_phantomChildren": {},
   "_requested": {
-    "type": "tag",
+    "type": "version",
     "registry": true,
-    "raw": "cordova-plugin-screen-orientation",
+    "raw": "cordova-plugin-screen-orientation@3.0.2",
     "name": "cordova-plugin-screen-orientation",
     "escapedName": "cordova-plugin-screen-orientation",
-    "rawSpec": "",
+    "rawSpec": "3.0.2",
     "saveSpec": null,
-    "fetchSpec": "latest"
+    "fetchSpec": "3.0.2"
   },
   "_requiredBy": [
-    "#USER"
+    "/"
   ],
   "_resolved": "https://registry.npmjs.org/cordova-plugin-screen-orientation/-/cordova-plugin-screen-orientation-3.0.2.tgz",
-  "_shasum": "81290a933cfe84d35482cfcb251c931cc7b71931",
-  "_spec": "cordova-plugin-screen-orientation",
-  "_where": "/home/joao/bike-reporter",
+  "_spec": "3.0.2",
+  "_where": "/home/joao/form-for-parking-violation",
   "author": {
     "name": "Apache Software Foundation"
   },
   "bugs": {
     "url": "https://github.com/apache/cordova-plugin-screen-orientation/issues"
   },
-  "bundleDependencies": false,
   "cordova": {
     "id": "cordova-plugin-screen-orientation",
     "platforms": [
@@ -37,7 +41,6 @@
       "windows"
     ]
   },
-  "deprecated": false,
   "description": "Cordova Screen Orientation plugin",
   "devDependencies": {
     "jshint": "^2.9.4"

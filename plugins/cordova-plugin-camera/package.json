@@ -16,12 +16,13 @@
     "fetchSpec": "5.0.1"
   },
   "_requiredBy": [
+    "#DEV:/",
     "#USER"
   ],
   "_resolved": "https://registry.npmjs.org/cordova-plugin-camera/-/cordova-plugin-camera-5.0.1.tgz",
   "_shasum": "9e0e94a7d29b15e6708f186bf9e59a28fcc0ee53",
   "_spec": "cordova-plugin-camera@5.0.1",
-  "_where": "/home/joao/bike-reporter",
+  "_where": "/home/joao/dev/form-for-parking-violation",
   "author": {
     "name": "Apache Software Foundation"
   },

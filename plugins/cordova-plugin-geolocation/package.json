@@ -16,12 +16,13 @@
     "fetchSpec": "4.1.0"
   },
   "_requiredBy": [
-    "#USER"
+    "#USER",
+    "/"
   ],
   "_resolved": "https://registry.npmjs.org/cordova-plugin-geolocation/-/cordova-plugin-geolocation-4.1.0.tgz",
   "_shasum": "dfea55e212ed1c46e9d82a373e90b45b9887d1f3",
   "_spec": "cordova-plugin-geolocation@4.1.0",
-  "_where": "/home/joao/bike-reporter",
+  "_where": "/home/joao/form-for-parking-violation",
   "author": {
     "name": "Apache Software Foundation"
   },

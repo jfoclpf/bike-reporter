@@ -16,12 +16,13 @@
     "fetchSpec": "latest"
   },
   "_requiredBy": [
-    "#USER"
+    "#USER",
+    "/"
   ],
   "_resolved": "https://registry.npmjs.org/cordova-pdf-generator/-/cordova-pdf-generator-2.1.1.tgz",
   "_shasum": "3e201157a4349e5b1872ad1865f5cb33f63de8f8",
   "_spec": "cordova-pdf-generator",
-  "_where": "/home/joao/bike-reporter",
+  "_where": "/home/joao/form-for-parking-violation",
   "author": {
     "name": "cesar"
   },

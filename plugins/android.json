@@ -7,18 +7,12 @@
     "files": {}
   },
   "installed_plugins": {
-    "cordova-plugin-email-composer": {
-      "ANDROID_SUPPORT_V4_VERSION": "27.+",
-      "PACKAGE_NAME": "bike.reporter"
-    },
-    "cordova-plugin-mobile-ocr": {
-      "PACKAGE_NAME": "bike.reporter"
-    },
     "cordova-plugin-geolocation": {
       "GPS_REQUIRED": "true",
       "PACKAGE_NAME": "bike.reporter"
     },
-    "info.protonet.imageresizer": {
+    "cordova-plugin-email-composer": {
+      "ANDROID_SUPPORT_V4_VERSION": "27.+",
       "PACKAGE_NAME": "bike.reporter"
     },
     "cordova-plugin-statusbar": {
@@ -45,18 +39,24 @@
     "cordova-plugin-inappbrowser": {
       "PACKAGE_NAME": "bike.reporter"
     },
+    "cordova-plugin-is-debug": {
+      "PACKAGE_NAME": "bike.reporter"
+    },
+    "cordova-plugin-app-version": {
+      "PACKAGE_NAME": "bike.reporter"
+    },
+    "cordova-plugin-camera": {
+      "ANDROID_SUPPORT_V4_VERSION": "27.+",
+      "PACKAGE_NAME": "bike.reporter"
+    },
+    "cordova-plugin-mobile-ocr": {
+      "PACKAGE_NAME": "bike.reporter"
+    },
     "cordova-plugin-simple-image-resizer": {
       "ANDROID_EXIFINTERFACES_VERSION": "27.+",
       "PACKAGE_NAME": "bike.reporter"
     },
     "cordova-plugin-file": {
-      "PACKAGE_NAME": "bike.reporter"
-    },
-    "cordova-plugin-file-transfer": {
-      "PACKAGE_NAME": "bike.reporter"
-    },
-    "cordova-plugin-camera": {
-      "ANDROID_SUPPORT_V4_VERSION": "27.+",
       "PACKAGE_NAME": "bike.reporter"
     }
   },

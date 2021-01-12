@@ -1,34 +1,38 @@
 {
-  "_from": "cordova-plugin-email-composer",
+  "_args": [
+    [
+      "cordova-plugin-email-composer@0.9.2",
+      "/home/joao/form-for-parking-violation"
+    ]
+  ],
+  "_from": "cordova-plugin-email-composer@0.9.2",
   "_id": "cordova-plugin-email-composer@0.9.2",
   "_inBundle": false,
   "_integrity": "sha512-w8eQZ6lbYWut13o/Cprixmacfyq5hds7DAjuTL34eQhyWWd/DA/o6ziiyY3So2ZOozeQ4DxQpyPN4BiqUKcyew==",
   "_location": "/cordova-plugin-email-composer",
   "_phantomChildren": {},
   "_requested": {
-    "type": "tag",
+    "type": "version",
     "registry": true,
-    "raw": "cordova-plugin-email-composer",
+    "raw": "cordova-plugin-email-composer@0.9.2",
     "name": "cordova-plugin-email-composer",
     "escapedName": "cordova-plugin-email-composer",
-    "rawSpec": "",
+    "rawSpec": "0.9.2",
     "saveSpec": null,
-    "fetchSpec": "latest"
+    "fetchSpec": "0.9.2"
   },
   "_requiredBy": [
-    "#USER"
+    "/"
   ],
   "_resolved": "https://registry.npmjs.org/cordova-plugin-email-composer/-/cordova-plugin-email-composer-0.9.2.tgz",
-  "_shasum": "264c66d45679acf2781c2cec54e32b2c1facfdb8",
-  "_spec": "cordova-plugin-email-composer",
-  "_where": "/home/joao/bike-reporter",
+  "_spec": "0.9.2",
+  "_where": "/home/joao/form-for-parking-violation",
   "author": {
     "name": "Sebastián Katzer"
   },
   "bugs": {
     "url": "https://github.com/katzer/cordova-plugin-email-composer/issues"
   },
-  "bundleDependencies": false,
   "cordova": {
     "id": "cordova-plugin-email-composer",
     "platforms": [
@@ -40,7 +44,6 @@
     ]
   },
   "dependencies": {},
-  "deprecated": false,
   "description": "Provides access to the standard interface that manages the editing and sending an email message",
   "engines": [
     {

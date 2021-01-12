@@ -1,4 +1,10 @@
 {
+  "_args": [
+    [
+      "cordova-plugin-compat@1.2.0",
+      "/home/joao/form-for-parking-violation"
+    ]
+  ],
   "_from": "cordova-plugin-compat@1.2.0",
   "_id": "cordova-plugin-compat@1.2.0",
   "_inBundle": false,
@@ -16,26 +22,23 @@
     "fetchSpec": "1.2.0"
   },
   "_requiredBy": [
-    "#USER"
+    "/"
   ],
   "_resolved": "https://registry.npmjs.org/cordova-plugin-compat/-/cordova-plugin-compat-1.2.0.tgz",
-  "_shasum": "0bc65757276ebd920c012ce920e274177576373e",
-  "_spec": "cordova-plugin-compat@1.2.0",
-  "_where": "/home/joao/bike-reporter",
+  "_spec": "1.2.0",
+  "_where": "/home/joao/form-for-parking-violation",
   "author": {
     "name": "Apache Software Foundation"
   },
   "bugs": {
     "url": "https://github.com/apache/cordova-plugin-compat/issues"
   },
-  "bundleDependencies": false,
   "cordova": {
     "id": "cordova-plugin-compat",
     "platforms": [
       "android"
     ]
   },
-  "deprecated": false,
   "description": "[DEPRECATED] This repo is for remaining backwards compatible with previous versions of Cordova.",
   "engines": {
     "cordovaDependencies": {

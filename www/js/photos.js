@@ -1,11 +1,13 @@
 /* eslint camelcase: off */
 
 /* global app, $, Camera, textocr */
-/* eslint no-var: "off" */
 
 app.photos = (function (thisModule) {
   // get Photo function
   // type depends if the photo is got from camera or the photo library
+
+  // array with full paths of images shown on form
+  var imagesUriArray = []
 
   function getPhoto (imgNmbr, type, callback) {
     console.log('%c ========== GETTING PHOTO ========== ', 'background: yellow; color: blue')
@@ -69,7 +71,7 @@ app.photos = (function (thisModule) {
       var imgToShowUri = !err ? resizedImgUri : imageUri
       displayImage(imgToShowUri, 'myImg_' + imgNmbr)
       console.log('display image ' + imgNmbr + ' : ' + imgToShowUri)
-      app.main.imagesUriArray[imgNmbr] = resizedImgUri
+      imagesUriArray[imgNmbr] = resizedImgUri
       callback(imgNmbr)
     })
 
@@ -151,7 +153,7 @@ app.photos = (function (thisModule) {
         // between AA and 00 can be space \s or any type of hyphen (-) en dash (–) and em dash (—)
         // see: https://pt.stackoverflow.com/a/431398/101186
         // see: https://regex101.com/r/SuYjr4/3
-        var detectPlate = /^\s{0,}.{0,1}(([A-Z]{2}[\s-–—]{0,1}[0-9]{2}[\s-–—]{0,1}[0-9]{2})|([0-9]{2}[\s-–—]{0,1}[0-9]{2}[\s-–—]{0,1}[A-Z]{2})|([0-9]{2}[\s\-–—]{0,1}[A-Z]{2}[\s\-–—]{0,1}[0-9]{2})|([A-Z]{2}[\s-–—]{0,1}[0-9]{2}[\s-–—]{0,1}[A-Z]{2})).{0,1}\s{0,}$/
+        var detectPlate = RegExp(/^\s{0,}.{0,1}(([A-Z]{2}[\s-–—]{0,1}[0-9]{2}[\s-–—]{0,1}[0-9]{2})|([0-9]{2}[\s-–—]{0,1}[0-9]{2}[\s-–—]{0,1}[A-Z]{2})|([0-9]{2}[\s\-–—]{0,1}[A-Z]{2}[\s\-–—]{0,1}[0-9]{2})|([A-Z]{2}[\s-–—]{0,1}[0-9]{2}[\s-–—]{0,1}[A-Z]{2})).{0,1}\s{0,}$/)
 
         var pattern, plateArray
         for (var i = 0; i < linesArray.length; i++) {
@@ -162,7 +164,7 @@ app.photos = (function (thisModule) {
             if (plateArray.length === 3) {
               plateArray[0] = plateArray[0].slice(-2)
               plateArray[2] = plateArray[2].slice(0, 2)
-              if (app.functions.isArrayAValidPlate(plateArray)) {
+              if (app.form.isArrayAValidPlate(plateArray)) {
                 success(plateArray)
                 return
               }
@@ -178,7 +180,7 @@ app.photos = (function (thisModule) {
             if (plateArray.length === 3) {
               plateArray[0] = plateArray[0].slice(-2)
               plateArray[2] = plateArray[2].slice(0, 2)
-              if (app.functions.isArrayAValidPlate(plateArray)) {
+              if (app.form.isArrayAValidPlate(plateArray)) {
                 success(plateArray)
                 return
               }
@@ -270,11 +272,11 @@ app.photos = (function (thisModule) {
     var elem = document.getElementById(id)
     elem.src = ''
     elem.style.display = 'none'
-    app.main.imagesUriArray[num] = null
+    imagesUriArray[num] = null
   }
 
   function resizeImage (imageUri, callback) {
-    app.functions.resizeImage(imageUri, function (resizedImageUri, err) {
+    app.file.resizeImage(imageUri, function (resizedImageUri, err) {
       if (err) {
         // could not resize image
         callback(imageUri, Error(err))
@@ -284,9 +286,15 @@ app.photos = (function (thisModule) {
     })
   }
 
+  // removes empty values from imagesUriArray, concatenating valid indexes, ex: [1, null, 2, null] will be [1, 2]
+  function getImagesArray () {
+    return app.functions.cleanArray(imagesUriArray)
+  }
+
   /* === Public methods to be returned === */
   thisModule.getPhoto = getPhoto
   thisModule.removeImage = removeImage
+  thisModule.getImagesArray = getImagesArray
 
   return thisModule
 })(app.photos || {})

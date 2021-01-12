@@ -1,15 +1,16 @@
 /* eslint camelcase: off */
 
-/* global app, $, cordova, alert, pdf, Blob, atob, FileTransfer, AUTHENTICATION_WITH_IN_APP_BROWSER */
 /* eslint no-unused-vars: "off" */
-/* eslint no-var: "off" */
+/* global app, $, cordova, device, pdf, Blob, atob, FileTransfer, AUTHENTICATION_WITH_IN_APP_BROWSER */
 
 app.authentication = (function (thisModule) {
   var inAppBrowserRef
   var isAuthenticationWindowClosed = true
-  var pdfFileJustCreated = false
+  var leftAppToSignPdf = false
+  var jAlertOnAppResume
 
   function startAuthenticationWithSystemBrowser () {
+    leftAppToSignPdf = false
     savePDF()
   }
 
@@ -91,7 +92,7 @@ app.authentication = (function (thisModule) {
           `(function(){
              var textEl = document.getElementById('MainContent_lblTitleChooseDoc');
              if(textEl){
-               textEl.innerHTML = 'Escolha o documento <u>${getPdfFileName()}</u> na pasta <i>Downloads</i> para assinar digitalmente';
+               textEl.innerHTML = 'Escolha o documento PDF na pasta <i>Downloads</i> para assinar digitalmente';
              }
            })();`
 
@@ -109,25 +110,7 @@ app.authentication = (function (thisModule) {
 
   function downloadPdfFile (args) {
     console.log('downloadPdfFile')
-
-    var fileTransfer = new FileTransfer()
-    var uri = encodeURI(args.url)
-
-    fileTransfer.download(
-      uri, // file's uri
-      args.targetPath, // where will be saved
-      function (entry) {
-        console.log('download complete: ' + entry.toURL())
-        window.open(entry.toURL(), '_blank', 'location=no,closebuttoncaption=Cerrar,toolbar=yes,enableViewportScale=yes')
-      },
-      function (error) {
-        console.log('download error source ' + error.source)
-        console.log('download error target ' + error.target)
-        console.log('upload error code' + error.code)
-      },
-      true,
-      args.options
-    )
+    /* on construction */
   }
 
   function authenticationError () {
@@ -149,43 +132,65 @@ app.authentication = (function (thisModule) {
       type: 'base64'
     }
 
-    var pdfhtml = '<html><body style="font-size:120%">' + app.text.getMainMessage()
+    var pdfhtml = '<html><body style="font-size:120%">' + app.text.getMainMessage('body')
 
-    for (var i = 0; i < app.main.imagesUriCleanArray.length; i++) {
+    var imagesArray = app.photos.getImagesArray()
+    for (var i = 0; i < imagesArray.length; i++) {
       pdfhtml += '<br><br>'
-      pdfhtml += '<img src="' + app.main.imagesUriCleanArray[i] + '" width="320">'
+      pdfhtml += '<img src="' + imagesArray[i] + '" width="320">'
     }
 
     pdfhtml += '<br><br>' + app.text.getExtraAuthenticationHTMLText()
-    pdfhtml += '<br><br>' + app.text.getRegards() + '<br>'
-
     pdfhtml += '</body></html>'
 
     pdf.fromData(pdfhtml, options)
       .then(function (base64) {
         // To define the type of the Blob
-        var contentType = 'application/pdf'
-
-        // if cordova.file is not available use instead :
-        // var folderpath = "file:///storage/emulated/0/Download/";
-        var folderpath = cordova.file.externalRootDirectory + 'Download/'
-        savebase64AsPDF(folderpath, getPdfFileName(), base64, contentType)
+        const res = getPdfFilePath()
+        if (res) {
+          const contentType = 'application/pdf'
+          savebase64AsPDF(res.folderpath, res.fileName, base64, contentType)
+        } else {
+          console.error('Error while creating pdf')
+          window.alert('Houve um erro na geração do PDF')
+        }
       })
-      .catch((err) => console.err(err))
+      .catch((err) => {
+        console.error('Error while creating pdf: ', err)
+        window.alert('Houve um erro na geração do PDF')
+      })
   }
 
-  function getPdfFileName () {
-    var carPlate = app.functions.getCarPlate()
+  function getPdfFilePath (callback) {
+    // folderpath/fileName
+    var folderpath
+    var fileName
 
-    var fileNameExtra
+    // get fileName
+    var carPlate = app.form.getCarPlate()
     if (carPlate) {
-      fileNameExtra = carPlate
+      fileName = carPlate
     } else {
       var rightNow = new Date()
-      fileNameExtra = rightNow.toISOString().slice(0, 10)
+      fileName = rightNow.toISOString().slice(0, 10)
     }
 
-    return fileNameExtra + '_Denuncia_Estacionamento' + '.pdf'
+    fileName = fileName + '_Denuncia_Estacionamento' + '.pdf'
+
+    // now get folderpath
+    if (app.functions.isThisAndroid()) {
+      console.log('Android version: ' + device.version)
+      if (parseFloat(device.version) <= 10) {
+        folderpath = cordova.file.externalRootDirectory + 'Download/' // file:///storage/emulated/0/Download/
+      } else {
+        window.alert('Para já não suportamos versões de Android superiores a 10 para Chave Móvel Digital')
+        return null
+      }
+      return { folderpath, fileName }
+    } else {
+      window.alert('Platform not supportted: ' + device.platform)
+      return null
+    }
   }
 
   // these two function got from here: https://ourcodeworld.com/articles/read/230/how-to-save-a-pdf-from-a-base64-string-on-the-device-with-cordova
@@ -230,41 +235,48 @@ app.authentication = (function (thisModule) {
    * @param content {Base64 String} Important : The content can't contain the following string (data:application/pdf;base64). Only the base64 string is expected.
    */
   function savebase64AsPDF (folderpath, filename, content, contentType) {
+    var onerror = function (err, message) {
+      leftAppToSignPdf = false
+      console.error(err)
+      window.alert(`Não foi possível salvar o ficheiro na pasta "${folderpath}". ${message}`)
+    }
     // Convert the base64 string in a Blob
     var DataBlob = b64toBlob(content, contentType)
 
-    console.log('Starting to write the file :3')
+    console.log('Starting to write the file')
 
     window.resolveLocalFileSystemURL(folderpath, function (dir) {
-      console.log('Access to the directory granted succesfully')
-      dir.getFile(filename, { create: true }, function (file) {
+      console.log('Access to the directory granted succesfully: ' + folderpath)
+      dir.getFile(filename, { create: true, exclusive: false }, function (file) {
         console.log('File created succesfully.')
         file.createWriter(function (fileWriter) {
           console.log('Writing content to file')
-          fileWriter.write(DataBlob)
 
-          pdfFileJustCreated = true
-          showPDFAuthInfo(folderpath, filename)
-        }, function () {
-          pdfFileJustCreated = false
-          alert('Não foi possível salvar o ficheiro em ' + folderpath)
-        })
-      })
-    })
+          fileWriter.onwriteend = function () {
+            console.success('Successful file write')
+            showPDFAuthInfo(folderpath, filename)
+          }
+
+          fileWriter.onerror = (err) => { onerror(err, 'Erro ao tentar escrever no ficheiro!') }
+
+          fileWriter.write(DataBlob)
+        }, (err) => { onerror(err, 'Erro ao tentar escrever no ficheiro!') })
+      }, (err) => { onerror(err, 'Erro ao tentar criar o ficheiro!') })
+    }, (err) => { onerror(err, 'Erro ao tentar procurar a pasta!') })
   }
 
   function showPDFAuthInfo (folderpath, filename) {
-    console.log('folderpath : ' + folderpath)
-    console.log('fileName :' + filename)
+    console.log('PDF folderpath: ' + folderpath)
+    console.log('PDF fileName: ' + filename)
 
     if (AUTHENTICATION_WITH_IN_APP_BROWSER) {
       inAppBrowserRef.hide()
     }
 
-    var msg = 'Foi criado o ficheiro PDF <span style="color:orange"><b>' + filename + '</b></span>' + ' ' +
-    'na pasta <i>Downloads</i> ou <i>Documentos/Downloads</i> com a sua denúncia.' + '<br><br>'
-    msg += 'Abrir-se-á de seguida uma janela para assinar o PDF fazendo uso da sua Chave Móvel Digital.' + '<br><br>'
-    msg += 'Guarde o PDF gerado com a sua assinatura digital.'
+    var msg = 'Foi criado o ficheiro PDF<br><span style="color:orange"><b>' + filename + '</b></span><br>' +
+      'na pasta <i>Downloads</i> ou <i>Documentos/Downloads</i> com a sua denúncia.<br><br>' +
+      'Abrir-se-á de seguida uma janela para assinar o PDF fazendo uso da sua Chave Móvel Digital.<br><br>' +
+      'Guarde o PDF gerado com a sua assinatura digital.'
 
     $.jAlert({
       title: 'Criação de ficheiro PDF',
@@ -281,6 +293,7 @@ app.authentication = (function (thisModule) {
               inAppBrowserRef.show()
             } else {
               cordova.InAppBrowser.open(app.main.urls.Chave_Movel_Digital.assinar_pdf, '_system')
+              leftAppToSignPdf = true
             }
           }
         }
@@ -294,90 +307,81 @@ app.authentication = (function (thisModule) {
       return
     }
 
-    console.log('pdfFileJustCreated:', pdfFileJustCreated)
-    if (pdfFileJustCreated) {
-      $.jAlert({
-        title: 'PDF digitalmente assinado?',
-        content: 'Consegiu assinar o PDF com sucesso, fazendo uso da sua Chave Móvel Digital?',
-        theme: 'dark_blue',
-        onClose: function () {
-          pdfFileJustCreated = false
-        },
-        btns: [
-          {
-            text: 'Sim',
-            theme: 'green',
-            class: 'jButtonAlert',
-            onClick: function () {
-              $.jAlert({
-                title: 'Envio do PDF digitalmente assinado',
-                content: 'Abrir-se-á de seguida a sua APP de email onde terá apenas que anexar o PDF digitalmente assinado. Garanta que anexa apenas o PDF que está digitalmente assinado.',
-                theme: 'dark_blue',
-                btns: [
-                  {
-                    text: 'Avançar',
-                    theme: 'green',
-                    class: 'jButtonAlert',
-                    onClick: sendMailMessageWithCMD // CMD -> Chave Móvel Digital
-                  }
-                ]
-              })
-            }
-          },
-          {
-            text: 'Não, mas quero tentar novamente',
-            theme: 'green',
-            closeAlert: false,
-            class: 'jButtonAlert',
-            onClick: function () {
-              pdfFileJustCreated = false
-              // Opens in the system's default web browser
-              cordova.InAppBrowser.open(app.main.urls.Chave_Movel_Digital.assinar_pdf, '_system')
-            }
-          },
-          {
-            text: 'Não, mas quero enviar sem Chave Móvel Digital',
-            theme: 'green',
-            class: 'jButtonAlert',
-            onClick: function () {
-              app.main.sendMailMessageWithoutCMD() // CMD -> Chave Móvel Digital
-              pdfFileJustCreated = false
-            }
-          }
-        ]
-      })
+    console.log('leftAppToSignPdf:', leftAppToSignPdf)
+    // if the PDF file was not just recently cr eated, leave
+    if (!leftAppToSignPdf) {
+      return
     }
+
+    // if the alert is already open, don't do anything
+    if (jAlertOnAppResume && $.jAlert('current') && jAlertOnAppResume.content === $.jAlert('current').content) {
+      console.log('jAlert window already open, don\'t open a new one')
+      return
+    }
+
+    jAlertOnAppResume = $.jAlert({
+      title: 'PDF digitalmente assinado?',
+      content: 'Consegiu assinar o PDF com sucesso, fazendo uso da sua Chave Móvel Digital?',
+      theme: 'dark_blue',
+      onClose: function () {
+        leftAppToSignPdf = false
+      },
+      btns: [
+        {
+          text: 'Sim',
+          theme: 'green',
+          class: 'jButtonAlert',
+          onClick: function () {
+            $.jAlert({
+              title: 'Envio do PDF digitalmente assinado',
+              content: 'Abrir-se-á de seguida a sua APP de email onde terá apenas que anexar o PDF digitalmente assinado. Garanta que anexa apenas o PDF que está digitalmente assinado.',
+              theme: 'dark_blue',
+              btns: [
+                {
+                  text: 'Avançar',
+                  theme: 'green',
+                  class: 'jButtonAlert',
+                  onClick: sendMailMessageWithCMD // CMD -> Chave Móvel Digital
+                }
+              ]
+            })
+          }
+        },
+        {
+          text: 'Não, mas quero tentar novamente',
+          theme: 'green',
+          closeAlert: false,
+          class: 'jButtonAlert',
+          onClick: function () {
+            leftAppToSignPdf = false
+            // Opens in the system's default web browser
+            cordova.InAppBrowser.open(app.main.urls.Chave_Movel_Digital.assinar_pdf, '_system')
+          }
+        },
+        {
+          text: 'Não, mas quero enviar sem Chave Móvel Digital',
+          theme: 'green',
+          class: 'jButtonAlert',
+          onClick: function () {
+            app.main.sendMailMessageWithoutCMD() // CMD -> Chave Móvel Digital
+            leftAppToSignPdf = false
+          }
+        }
+      ]
+    })
   }
 
   function sendMailMessageWithCMD () {
-    var mainMessage = 'Exmos. Srs.,<br><br>'
-    mainMessage += 'Envio em anexo ficheiro PDF com uma denúncia de estacionamento ao abrigo do n.º 5 do art. 170.º do Código da Estrada.<br><br>'
-
-    mainMessage += 'Realço que de acordo com o n.º 1 do artigo 4.º da Lei n.º 37/2014, ' +
-      'os atos praticados por um cidadão junto da Administração Pública presumem-se ser da sua autoria, ' +
-      'dispensando-se a sua assinatura ou presença, ' +
-      'sempre que sejam utilizados meios de autenticação segura para o efeito, ' +
-      'meios esses, que de acordo com o número 2 do mesmo artigo, ' +
-      'incluem o uso de certificado digital constante do cartão de cidadão. ' +
-      'Por conseguinte, no seguimento das instruções emanadas pela ANSR, terão V. Exas. ' +
-      'que emitir a respetiva coima sem que eu tenha que me apresentar junto das instalações de V. Exas.'
-
-    mainMessage += '<br><br>' + app.text.getRegards() + '<br>'
-
-    const carPlateStr = app.functions.getCarPlate()
-    const address = app.functions.getFullAddress()
-    var emailSubject = `[${carPlateStr}] na ${address} - Denúncia de estacionamento ao abrigo do n.º 5 do art. 170.º do Código da Estrada`
-
-    app.functions.submitDataToDB()
+    app.dbServerLink.submitNewEntryToDB()
 
     cordova.plugins.email.open({
-      to: app.main.emailTo, // email addresses for TO field
-      subject: emailSubject, // subject of the email
-      body: mainMessage, // email body (for HTML, set isHtml to true)
+      to: app.contactsFunctions.getEmailOfCurrentSelectedAuthority(), // email addresses for TO field
+      subject: app.text.getMailMessageWithCMD('subject'), // subject of the email
+      body: app.text.getMailMessageWithCMD('body'), // email body (for HTML, set isHtml to true)
       isHtml: true // indicats if the body is HTML or plain text
     }, function () {
       console.log('email view dismissed')
-      pdfFileJustCreated = false
+      leftAppToSignPdf = false
     }, this)
   }
 

@@ -1,38 +1,32 @@
 {
-  "_args": [
-    [
-      "cordova-plugin-file@6.0.2",
-      "/home/joao/bike-reporter"
-    ]
-  ],
-  "_from": "cordova-plugin-file@6.0.2",
-  "_id": "cordova-plugin-file@6.0.2",
+  "_from": "git+https://github.com/apache/cordova-plugin-file.git",
+  "_id": "cordova-plugin-file@7.0.0-dev",
   "_inBundle": false,
-  "_integrity": "sha512-m7cughw327CjONN/qjzsTpSesLaeybksQh420/gRuSXJX5Zt9NfgsSbqqKDon6jnQ9Mm7h7imgyO2uJ34XMBtA==",
+  "_integrity": "",
   "_location": "/cordova-plugin-file",
   "_phantomChildren": {},
   "_requested": {
-    "type": "version",
-    "registry": true,
-    "raw": "cordova-plugin-file@6.0.2",
-    "name": "cordova-plugin-file",
-    "escapedName": "cordova-plugin-file",
-    "rawSpec": "6.0.2",
-    "saveSpec": null,
-    "fetchSpec": "6.0.2"
+    "type": "git",
+    "raw": "git+https://github.com/apache/cordova-plugin-file.git",
+    "rawSpec": "git+https://github.com/apache/cordova-plugin-file.git",
+    "saveSpec": "git+https://github.com/apache/cordova-plugin-file.git",
+    "fetchSpec": "https://github.com/apache/cordova-plugin-file.git",
+    "gitCommittish": null
   },
   "_requiredBy": [
-    "/"
+    "#DEV:/",
+    "#USER"
   ],
-  "_resolved": "https://registry.npmjs.org/cordova-plugin-file/-/cordova-plugin-file-6.0.2.tgz",
-  "_spec": "6.0.2",
-  "_where": "/home/joao/bike-reporter",
+  "_resolved": "git+https://github.com/apache/cordova-plugin-file.git#a4a7bfe2aa48f5c44eb8af264c1c6540ea4dd072",
+  "_spec": "git+https://github.com/apache/cordova-plugin-file.git",
+  "_where": "/home/joao/dev/bike-reporter",
   "author": {
     "name": "Apache Software Foundation"
   },
   "bugs": {
     "url": "https://github.com/apache/cordova-plugin-file/issues"
   },
+  "bundleDependencies": false,
   "cordova": {
     "id": "cordova-plugin-file",
     "platforms": [
@@ -43,6 +37,7 @@
       "windows"
     ]
   },
+  "deprecated": false,
   "description": "Cordova File Plugin",
   "devDependencies": {
     "eslint": "^3.19.0",
@@ -59,6 +54,9 @@
         "cordova-android": ">=6.3.0"
       },
       "7.0.0": {
+        "cordova-android": ">=9.0.0"
+      },
+      "8.0.0": {
         "cordova": ">100"
       }
     }
@@ -85,5 +83,5 @@
     "test": "npm run eslint"
   },
   "types": "./types/index.d.ts",
-  "version": "6.0.2"
+  "version": "7.0.0-dev"
 }

@@ -16,12 +16,13 @@
     "fetchSpec": "4.1.0"
   },
   "_requiredBy": [
+    "#DEV:/",
     "#USER"
   ],
   "_resolved": "https://registry.npmjs.org/cordova-plugin-inappbrowser/-/cordova-plugin-inappbrowser-4.1.0.tgz",
   "_shasum": "6010809d1cd813c546f65e4e41dc2b9ed97179e4",
   "_spec": "cordova-plugin-inappbrowser@4.1.0",
-  "_where": "/home/joao/bike-reporter",
+  "_where": "/home/joao/dev/bike-reporter",
   "author": {
     "name": "Apache Software Foundation"
   },
