@@ -19,12 +19,12 @@ cd platforms/android/app/build/outputs/apk/release/
 
 jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore autocosts.keystore -storepass $PASS app-release-unsigned.apk autocosts
 
-zipalign -v 4 app-release-unsigned.apk formParkingViolation.apk
+zipalign -v 4 app-release-unsigned.apk bikeReporter.apk
 
 cd ../../../../../../..
-rm -f dist/formParkingViolation.apk
+rm -f dist/bikeReporter.apk
 
-cp platforms/android/app/build/outputs/apk/release/formParkingViolation.apk dist/
+cp platforms/android/app/build/outputs/apk/release/bikeReporter.apk dist/
 
 GREEN=$(tput setaf 2)
-printf "\n\n${GREEN}File created at: dist/formParkingViolation.apk\n\n"
+printf "\n\n${GREEN}File created at: dist/bikeReporter.apk\n\n"
