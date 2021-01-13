@@ -3,9 +3,9 @@
 [js-standard-style_img]: https://img.shields.io/badge/code%20style-standard-brightgreen.svg
 [js-standard-style_url]: https://standardjs.com/
 
-# Denúncia Estacionamento
+# Bike Reporter
 
-Aplicação móvel para submissão de queixa de estacionamento ilegal junto de autoridade policial, ao abrigo do n.º 5 do art.º 170.º do Código da Estrada.
+Aplicação móvel para submissão de queixa por condução ilegal de veículo a motor pondo em perigo ciclista.
 
 O código está desenhado em Javascript para ser corrido num smartphone. Para tal faz uso da plataforma <a href="https://cordova.apache.org/">Apache Cordova</a>.
 
@@ -37,8 +37,8 @@ O ADB é usado para testar a APP no seu telemóvel Android
 
 ## Como instalar e testar
 
- 1. Clone este projeto `git clone https://github.com/jfoclpf/form-for-parking-violation`
- 2. Entre na pasta recém criada `cd form-for-parking-violation`
+ 1. Clone este projeto `git clone https://github.com/jfoclpf/bike-reporter`
+ 2. Entre na pasta recém criada `cd bike-reporter`
  3. Adicione a plataforma. Para Android `cordova platform add android`.
  3. Corra `cordova build android` para construir o projeto na sua máquina. Em Android cria o ficheiro APK na pasta `platforms/android/build/outputs/apk`
 
@@ -84,14 +84,3 @@ mesmo apagar com `export JAVA_HOME=`
 GNU GPLv3<br>
 http://www.gnu.org/licenses/gpl-3.0.en.html <br>
 http://choosealicense.com/licenses/gpl-3.0/
-
-## Na comunicação social
-
-* <a href="http://www.jornaleconomico.sapo.pt/noticias/estacionamentos-selvagens-ja-existe-uma-app-para-denuncia-los-189812">Jornal Económico</a>
-* <a href="https://www.jn.pt/motor-24/interior/carro-mal-estacionado-ja-pode-fazer-queixa-com-esta-app-8686603.html">Jornal de Notícias</a>
-* <a href="https://www.dn.pt/motor-24/interior/carro-mal-estacionado-ja-pode-fazer-queixa-com-esta-app-8686600.html">Diário de Notícias</a>
-* <a href="https://www.timeout.pt/lisboa/pt/blog/ha-uma-nova-app-para-fazer-queixinhas-de-estacionamento-ilegal-081417">Time Out</a>
-* <a href="https://www.noticiasaominuto.com/tech/837146/ha-um-carro-a-bloquea-lo-faca-queixa-com-esta-aplicacao">Notícias ao Minuto</a>
-* <a href="http://tek.sapo.pt/mobile/android/artigos/encontrou-um-carro-mal-estacionado-ha-uma-app-para-fazer-queixa">Tek Sapo</a>
-* <a href="https://nit.pt/out-of-town/back-in-town/ha-nova-app-queixinhas-quem-nao-sabe-estacionar">Nit</a>
-* <a href="http://www.turbo.pt/carro-mal-estacionado-ja-pode-queixa-esta-app/">Turbo</a>
