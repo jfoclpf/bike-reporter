@@ -1,7 +1,7 @@
 {
   "name": "bike.reporter",
   "displayName": "Bike Reporter",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Submit as a cyclist a violation complain to police authority",
   "main": "index.js",
   "scripts": {
