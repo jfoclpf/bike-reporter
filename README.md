@@ -35,11 +35,23 @@ O gradle é usado para fazer o `build` dos projetos Apache Cordova
 O ADB é usado para testar a APP no seu telemóvel Android
 
 ## Como instalar e testar
+### Android
 
  1. Clone este projeto `git clone https://github.com/jfoclpf/bike-reporter`
  2. Entre na pasta recém criada `cd bike-reporter`
- 3. Adicione a plataforma. Para Android `cordova platform add android`.
+ 3. Adicione a plataforma: `cordova platform add android`.
  3. Corra `cordova build android` para construir o projeto na sua máquina. Em Android cria o ficheiro APK na pasta `platforms/android/build/outputs/apk`
+ 
+### iOS
+
+```
+git clone https://github.com/jfoclpf/bike-reporter.git
+cd bike-reporter
+cordova platform add ios
+cd platforms/ios
+pod update
+open Bike\ Reporter.xcworkspace/
+```
 
 ### Testar num smartphone
 
