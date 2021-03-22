@@ -32,7 +32,10 @@ app.main = (function (thisModule) {
       uploadOccurence: 'https://contabo.joaopimentel.com/app_bike_reporter/serverapp', // to upload anew or update the data of an occurence
       requestHistoric: 'https://contabo.joaopimentel.com/app_bike_reporter/serverapp_get_historic' // to request all historic ocurrences of current user
     },
-    androidPlayStore: 'https://play.google.com/store/apps/details?id=com.form.parking.violation'
+    androidPlayStore: 'https://play.google.com/store/apps/details?id=com.form.parking.violation',
+    openStreetMaps: {
+      nominatimReverse: 'https://nominatim.openstreetmap.org/reverse'
+    }
   }
 
   $(document).ready(function () {
