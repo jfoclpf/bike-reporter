@@ -31,6 +31,8 @@ app.use(bodyParser.json())
 
 // to upload anew or update the data of an occurence
 app.post(submissionsUrl, function (req, res) {
+  var db = mysql.createConnection(DBInfo)
+
   // object got from POST
   var serverCommand = req.body.serverCommand || req.body.dbCommand // dbCommand for backward compatibility
   var databaseObj = req.body.databaseObj
@@ -57,15 +59,7 @@ app.post(submissionsUrl, function (req, res) {
   switch (serverCommand) {
     case 'submitNewEntryToDB': // (new entry in table) builds sql query to insert user data
       databaseObj.table_row_uuid = generateUuid()
-      query = 'INSERT INTO ' + DBInfo.db_tables.denuncias + ' ('
-      var databaseKeys = Object.keys(databaseObj)
-      for (let i = 0; i < databaseKeys.length; i++) {
-        query += databaseKeys[i] + (i !== databaseKeys.length - 1 ? ', ' : ')')
-      }
-      query += ' ' + 'VALUES('
-      for (let i = 0; i < databaseKeys.length; i++) {
-        query += '\'' + databaseObj[databaseKeys[i]] + '\'' + (i !== databaseKeys.length - 1 ? ', ' : ')')
-      }
+      query = `INSERT INTO ${DBInfo.db_tables.denuncias} SET ${db.escape(databaseObj)}`
       break
     case 'setProcessedByAuthorityStatus':
       // (update) when field 'processada_por_autoridade' is present in the request (client) it means just an update of a previous existing entry/line
@@ -84,8 +78,6 @@ app.post(submissionsUrl, function (req, res) {
   }
 
   debug(sqlFormatter.format(query))
-
-  var db = mysql.createConnection(DBInfo)
 
   async.series([
     function (next) {
@@ -137,6 +129,7 @@ app.post(submissionsUrl, function (req, res) {
 })
 
 app.get(requestHistoricUrl, function (req, res) {
+  var db = mysql.createConnection(DBInfo)
   const uuid = req.query.uuid
 
   debug('\nGetting entries from' +
@@ -145,7 +138,7 @@ app.get(requestHistoricUrl, function (req, res) {
   var query
   if (uuid) {
     // get the all entries for a specific user (ex: to generate historic for user)
-    query = `SELECT * FROM ${DBInfo.db_tables.denuncias} WHERE uuid='${uuid}' AND deleted_by_admin=0 ORDER BY data_data ASC`
+    query = `SELECT * FROM ${DBInfo.db_tables.denuncias} WHERE uuid=${db.escape(uuid)} AND deleted_by_admin=0 ORDER BY data_data ASC`
   } else {
     // get all production entries for all users except admin (ex: to generate a map of all entries)
     query = `SELECT * FROM ${DBInfo.db_tables.denuncias} WHERE PROD=1 AND uuid!='87332d2a0aa5e634' AND deleted_by_admin=0 ` +
@@ -153,8 +146,6 @@ app.get(requestHistoricUrl, function (req, res) {
   }
 
   debug(sqlFormatter.format(query))
-
-  var db = mysql.createConnection(DBInfo)
 
   async.series([
     function (next) {
