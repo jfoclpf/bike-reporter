@@ -5,10 +5,11 @@ and stores it in the dabatase */
 /* eslint no-var: "off" */
 /* eslint no-prototype-builtins: "off" */
 
-const submissionsUrl = '/app_bike_reporter/serverapp' // to upload anew or update the data of an occurence
-const requestHistoricUrl = '/app_bike_reporter/serverapp_get_historic'
+// the regex is for legacy, "/app_bike_reporter/serverapp" and "/serverapp" both matches
+const submissionsUrl = /.*\/serverapp$/ // to upload anew or update the data of an occurence
+const requestHistoricUrl = /.*\/serverapp_get_historic$/
 const commonPort = 4035
-const imgUploadUrl = '/app_bike_reporter/serverapp_img_upload'
+const imgUploadUrl = /.*\/serverapp_img_upload$/
 const imgUploadUrlPort = 4036
 
 const fs = require('fs')
