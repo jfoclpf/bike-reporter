@@ -63,13 +63,13 @@ app.post(submissionsUrl, function (req, res) {
       break
     case 'setProcessedByAuthorityStatus':
       // (update) when field 'processada_por_autoridade' is present in the request (client) it means just an update of a previous existing entry/line
-      query = `UPDATE ${DBInfo.db_tables.denuncias} SET processada_por_autoridade=${databaseObj.processada_por_autoridade} ` +
-              `WHERE PROD=${databaseObj.PROD} AND uuid='${databaseObj.uuid}' AND foto1='${databaseObj.foto1}' AND carro_matricula='${databaseObj.carro_matricula}'`
+      query = `UPDATE ${DBInfo.db_tables.denuncias} SET processada_por_autoridade=${db.escape(databaseObj.processada_por_autoridade)} ` +
+              `WHERE PROD=${db.escape(databaseObj.PROD)} AND uuid=${db.escape(databaseObj.uuid)} AND foto1=${db.escape(databaseObj.foto1)} AND carro_matricula=${db.escape(databaseObj.carro_matricula)}`
       break
     case 'setEntryAsDeletedInDatabase':
       // (update) when field 'deleted_by_admin' is present in the request (client) it means just an update of a previous existing entry/line
-      query = `UPDATE ${DBInfo.db_tables.denuncias} SET deleted_by_admin=${databaseObj.deleted_by_admin} ` +
-              `WHERE PROD=${databaseObj.PROD} AND uuid='${databaseObj.uuid}' AND foto1='${databaseObj.foto1}' AND carro_matricula='${databaseObj.carro_matricula}'`
+      query = `UPDATE ${DBInfo.db_tables.denuncias} SET deleted_by_admin=${db.escape(databaseObj.deleted_by_admin)} ` +
+              `WHERE PROD=${db.escape(databaseObj.PROD)} AND uuid=${db.escape(databaseObj.uuid)} AND foto1=${db.escape(databaseObj.foto1)} AND carro_matricula=${db.escape(databaseObj.carro_matricula)}`
       break
     default:
       debug('Bad request on dbCommand: ' + serverCommand)
